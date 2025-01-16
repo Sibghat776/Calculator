@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main {
+    background-color: #666A86;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.calculator {
+    height: 90vh;
+    width: 35vw;
+    background-color: #95B8D1;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    z-index: 1;
+    flex-direction: column;
+}
+.input > input {
+    padding: 18px 5px;
+    border-radius: 3px;
+    width: 30vw;
+    background-color: transparent;
+    border: 1px solid black;
+}
+.circle1 {
+    height: 300px;
+    width: 300px;
+    background-color: #E8DDB5;
+    position: absolute;
+    top: -60px;
+    border-radius: 50%;
+    right: -60px !important;
+}
+.circle2 {
+    height: 300px;
+    width: 300px;
+    background-color: #EDAFB8;
+    position: absolute;
+    bottom: -60px;
+    border-radius: 50%;
+    left: -60px !important;
+}
+.circle3 {
+    height: 300px;
+    width: 300px;
+    background-color: #333333;
+    position: absolute;
+    bottom: 300px;
+    border-radius: 50%;
+    left: 300px;
+}
+.circle4 {
+    height: 300px;
+    width: 300px;
+    background-color: #333333;
+    position: absolute;
+    top: 300px;
+    border-radius: 50%;
+    right: 300px;
+}
+.btns {
+
+}
+.btns > .upper > button {
+    padding: 10px 20px;
+    width: 22%;
+    border-radius: 5px;
+}
+.btns > .right > button {
+    padding: 10px 20px;
+    width: 22%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
