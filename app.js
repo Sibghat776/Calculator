@@ -12,15 +12,16 @@ allBtns.forEach((btn) => {
 
         // Agar operator click hua
         if (['+', '-', 'x', '÷'].includes(btnText)) {
-            operator = btnText; // Operator store karein
-            isOperatorClicked = true;
-            inputVal.value += btnText; // Operator dikhayen
+            if (!isOperatorClicked) {
+                operator = btnText; // Operator store karein
+                isOperatorClicked = true;
+                inputVal.value += btnText; // Operator dikhayen
+            }
         }
         // Agar '=' click hua
         else if (btnText === "=") {
-            const secondValue = inputVal.value.split(operator)[1]; // Operator ke baad ka number
-            console.log(secondValue)
-            const result = calculate(Number(firstValue), Number(secondValue), operator);
+            const [num1, num2] = inputVal.value.split(new RegExp(`\\${operator}`)); // Operator ke aas-paas ke numbers nikaalein
+            const result = calculate(Number(num1), Number(num2), operator);
             inputVal.value = result; // Result dikhayen
             firstValue = ""; // Reset
             operator = "";
@@ -34,15 +35,13 @@ allBtns.forEach((btn) => {
             isOperatorClicked = false;
         }
         else if (btnText === "X") {
-            console.log("Chala")
-            inputVal.value = inputVal.value.slice(0, -1)
+            inputVal.value = inputVal.value.slice(0, -1); // Ek character delete karein
         }
         // Agar number click hua
         else {
             if (isOperatorClicked) {
                 inputVal.value += btnText; // Dusra number add karein
             } else {
-                firstValue += btnText; // Pehle number ko store karein
                 inputVal.value += btnText; // Input field update karein
             }
         }
